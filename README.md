@@ -1,25 +1,25 @@
-# The Official Kodeco Kotlin Style Guide
+# Lune's Official Kotlin Style Guide
 
 This style guide is different from others you may see, because the focus is centered on readability for print and the web. We created this style guide to keep the code in our tutorials consistent.
 
-Our overarching goals are __conciseness__, __readability__ and __simplicity__.
+Our overarching goals are **conciseness**, **readability** and **simplicity**.
 
 You should also check out our other style guides:
 
-* [Swift](https://github.com/kodecocodes/swift-style-guide)
-* [Objective-C](https://github.com/kodecocodes/objective-c-style-guide)
-* [Java](https://github.com/kodecocodes/java-style-guide)
+- [Swift](https://github.com/Lune-Technologies/swift-style-guide)
+- [Objective-C](https://github.com/kodecocodes/objective-c-style-guide)
+- [Java](https://github.com/kodecocodes/java-style-guide)
 
 ## Inspiration
 
-This style-guide is somewhat of a mash-up between the existing Kotlin language style guides, and a tutorial-readability focused Swift style-guide. The language guidance is drawn from: 
+This style-guide is somewhat of a mash-up between the existing Kotlin language style guides, and a tutorial-readability focused Swift style-guide. The language guidance is drawn from:
 
 - The [Android Kotlin style guide](https://android.github.io/kotlin-guides/style.html)
-- The [Kotlin Coding Conventions](https://kotlinlang.org/docs/reference/coding-conventions.html) 
+- The [Kotlin Coding Conventions](https://kotlinlang.org/docs/reference/coding-conventions.html)
 - The [Android contributors style guide](https://source.android.com/source/code-style.html)
 - The [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html).
 
-Alterations to support additional readability in tutorials were inspired by the [Kodeco Swift style guide](https://github.com/kodecocodes/swift-style-guide).
+Alterations to support additional readability in tutorials were inspired by the [Lune Swift style guide](https://github.com/Lune-Technologies/swift-style-guide).
 
 ## Android Studio Coding Style
 
@@ -31,41 +31,39 @@ To install the file, open Android Studio Settings and go to **Editor > Code Styl
 
 From now on, projects you create _should_ follow the correct style guidelines.
 
-
 ## Table of Contents
 
 - [Nomenclature](#nomenclature)
-  + [Packages](#packages)
-  + [Classes & Interfaces](#classes--interfaces)
-  + [Methods](#methods)
-  + [Fields](#fields)
-  + [Variables & Parameters](#variables--parameters)
-  + [Misc](#misc)
+  - [Packages](#packages)
+  - [Classes & Interfaces](#classes--interfaces)
+  - [Methods](#methods)
+  - [Fields](#fields)
+  - [Variables & Parameters](#variables--parameters)
+  - [Misc](#misc)
 - [Declarations](#declarations)
-  + [Visibility Modifiers](#visibility-modifiers)
-  + [Fields & Variables](#fields--variables)
-  + [Classes](#classes)
-  + [Data Type Objects](#data-type-objects)
-  + [Enum Classes](#enum-classes)
+  - [Visibility Modifiers](#visibility-modifiers)
+  - [Fields & Variables](#fields--variables)
+  - [Classes](#classes)
+  - [Data Type Objects](#data-type-objects)
+  - [Enum Classes](#enum-classes)
 - [Spacing](#spacing)
-  + [Indentation](#indentation)
-  + [Line Length](#line-length)
-  + [Vertical Spacing](#vertical-spacing)
+  - [Indentation](#indentation)
+  - [Line Length](#line-length)
+  - [Vertical Spacing](#vertical-spacing)
 - [Semicolons](#semicolons)
 - [Getters & Setters](#getters--setters)
 - [Brace Style](#brace-style)
 - [When Statements](#when-statements)
 - [Annotations](#annotations)
 - [Types](#types)
-  + [Type Inference](#type-inference)
-  + [Constants vs. Variables](#constants-vs-variables)
-  + [Optionals](#optionals)
+  - [Type Inference](#type-inference)
+  - [Constants vs. Variables](#constants-vs-variables)
+  - [Optionals](#optionals)
 - [XML Guidance](#xml-guidance)
 - [Language](#language)
 - [Copyright Statement](#copyright-statement)
 - [Smiley Face](#smiley-face)
 - [Credit](#credits)
-
 
 ## Nomenclature
 
@@ -73,15 +71,15 @@ On the whole, naming should follow Java standards, as Kotlin is a JVM-compatible
 
 ### Packages
 
-Package names are similar to Java: all __lower-case__, multiple words concatenated together, without hypens or underscores:
+Package names are similar to Java: all **lower-case**, multiple words concatenated together, without hypens or underscores:
 
-__BAD__:
+**BAD**:
 
 ```kotlin
 com.YourCompany.funky_widget
 ```
 
-__GOOD__:
+**GOOD**:
 
 ```kotlin
 com.yourcompany.funkywidget
@@ -89,15 +87,15 @@ com.yourcompany.funkywidget
 
 ### Classes & Interfaces
 
-Written in __UpperCamelCase__. For example `RadialSlider`. 
+Written in **UpperCamelCase**. For example `RadialSlider`.
 
 ### Methods
 
-Written in __lowerCamelCase__. For example `setValue`.
+Written in **lowerCamelCase**. For example `setValue`.
 
 ### Fields
 
-Generally, written in __lowerCamelCase__. Fields should **not** be named with Hungarian notation, as Hungarian notation is [erroneously thought](http://jakewharton.com/just-say-no-to-hungarian-notation/) to be recommended by Google.
+Generally, written in **lowerCamelCase**. Fields should **not** be named with Hungarian notation, as Hungarian notation is [erroneously thought](http://jakewharton.com/just-say-no-to-hungarian-notation/) to be recommended by Google.
 
 Example field names:
 
@@ -109,7 +107,7 @@ class MyClass {
 }
 ```
 
-Constant values in the companion object should be written in __uppercase__, with an underscore separating words:
+Constant values in the companion object should be written in **uppercase**, with an underscore separating words:
 
 ```kotlin
 companion object {
@@ -119,7 +117,7 @@ companion object {
 
 ### Variables & Parameters
 
-Written in __lowerCamelCase__.
+Written in **lowerCamelCase**.
 
 Single character values must be avoided, except for temporary looping variables.
 
@@ -127,14 +125,15 @@ Single character values must be avoided, except for temporary looping variables.
 
 In code, acronyms should be treated as words. For example:
 
-__BAD:__
+**BAD:**
 
 ```kotlin
 XMLHTTPRequest
-URL: String? 
+URL: String?
 findPostByID
 ```
-__GOOD:__
+
+**GOOD:**
 
 ```kotlin
 XmlHttpRequest
@@ -170,7 +169,7 @@ Access level modifiers should be explicitly defined for classes, methods and mem
 
 Prefer single declaration per line.
 
-__GOOD:__
+**GOOD:**
 
 ```kotlin
 username: String
@@ -185,7 +184,7 @@ Exactly one class per source file, although inner classes are encouraged where s
 
 Prefer data classes for simple data holding objects.
 
-__BAD:__
+**BAD:**
 
 ```kotlin
 class Person(val name: String) {
@@ -195,7 +194,7 @@ class Person(val name: String) {
 }
 ```
 
-__GOOD:__
+**GOOD:**
 
 ```kotlin
 data class Person(val name: String)
@@ -211,7 +210,7 @@ private enum CompassDirection { EAST, NORTH, WEST, SOUTH }
 
 ## Spacing
 
-Spacing is especially important in Kodeco code, as code needs to be easily readable as part of the tutorial. 
+Spacing is especially important in Lune code, as code needs to be easily readable as part of the tutorial.
 
 ### Indentation
 
@@ -221,7 +220,7 @@ Indentation is using spaces - never tabs.
 
 Indentation for blocks uses 2 spaces (not the default 4):
 
-__BAD:__
+**BAD:**
 
 ```kotlin
 for (i in 0..9) {
@@ -229,7 +228,7 @@ for (i in 0..9) {
 }
 ```
 
-__GOOD:__
+**GOOD:**
 
 ```kotlin
 for (i in 0..9) {
@@ -241,14 +240,14 @@ for (i in 0..9) {
 
 Indentation for line wraps should use 4 spaces (not the default 8):
 
-__BAD:__
+**BAD:**
 
 ```kotlin
 val widget: CoolUiWidget =
         someIncrediblyLongExpression(that, reallyWouldNotFit, on, aSingle, line)
 ```
 
-__GOOD:__
+**GOOD:**
 
 ```kotlin
 val widget: CoolUiWidget =
@@ -259,7 +258,6 @@ val widget: CoolUiWidget =
 
 Lines should be no longer than 100 characters long.
 
-
 ### Vertical Spacing
 
 There should be exactly one blank line between methods to aid in visual clarity and organization. Whitespace within methods should separate functionality, but having too many sections in a method often means you should refactor into several methods.
@@ -268,14 +266,13 @@ There should be exactly one blank line between methods to aid in visual clarity 
 
 When they are needed, use comments to explain **why** a particular piece of code does something. Comments must be kept up-to-date or deleted.
 
-Avoid block comments inline with code, as the code should be as self-documenting as possible. *Exception: This does not apply to those comments used to generate documentation.*
-
+Avoid block comments inline with code, as the code should be as self-documenting as possible. _Exception: This does not apply to those comments used to generate documentation._
 
 ## Semicolons
 
-Semicolons ~~are dead to us~~ should be avoided wherever possible in Kotlin. 
+Semicolons ~~are dead to us~~ should be avoided wherever possible in Kotlin.
 
-__BAD__:
+**BAD**:
 
 ```kotlin
 val horseGiftedByTrojans = true;
@@ -284,7 +281,7 @@ if (horseGiftedByTrojans) {
 }
 ```
 
-__GOOD__:
+**GOOD**:
 
 ```kotlin
 val horseGiftedByTrojans = true
@@ -295,7 +292,7 @@ if (horseGiftedByTrojans) {
 
 ## Getters & Setters
 
-Unlike Java, direct access to fields in Kotlin is preferred. 
+Unlike Java, direct access to fields in Kotlin is preferred.
 
 If custom getters and setters are required, they should be declared [following Kotlin conventions](https://kotlinlang.org/docs/reference/properties.html) rather than as separate methods.
 
@@ -303,7 +300,7 @@ If custom getters and setters are required, they should be declared [following K
 
 Only trailing closing-braces are awarded their own line. All others appear the same line as preceding code:
 
-__BAD:__
+**BAD:**
 
 ```kotlin
 class MyClass
@@ -322,7 +319,7 @@ class MyClass
 }
 ```
 
-__GOOD:__
+**GOOD:**
 
 ```kotlin
 class MyClass {
@@ -338,7 +335,7 @@ class MyClass {
 
 Conditional statements are always required to be enclosed with braces, irrespective of the number of lines required.
 
-__BAD:__
+**BAD:**
 
 ```kotlin
 if (someTest)
@@ -346,7 +343,7 @@ if (someTest)
 if (someTest) doSomethingElse()
 ```
 
-__GOOD:__
+**GOOD:**
 
 ```kotlin
 if (someTest) {
@@ -359,7 +356,7 @@ if (someTest) { doSomethingElse() }
 
 Unlike `switch` statements in Java, `when` statements do not fall through. Separate cases using commas if they should be handled the same way. Always include the else case.
 
-__BAD:__
+**BAD:**
 
 ```kotlin
 when (anInput) {
@@ -369,7 +366,7 @@ when (anInput) {
 }
 ```
 
-__GOOD:__
+**GOOD:**
 
 ```kotlin
 when (anInput) {
@@ -379,34 +376,33 @@ when (anInput) {
 }
 ```
 
-
-## Types 
+## Types
 
 Always use Kotlin's native types when available. Kotlin is JVM-compatible so **[TODO: more info]**
 
 ### Type Inference
 
-Type inference should be preferred where possible to explicitly declared types. 
+Type inference should be preferred where possible to explicitly declared types.
 
-__BAD:__
+**BAD:**
 
 ```kotlin
 val something: MyType = MyType()
 val meaningOfLife: Int = 42
 ```
 
-__GOOD:__
+**GOOD:**
 
 ```kotlin
 val something = MyType()
 val meaningOfLife = 42
 ```
 
-### Constants vs. Variables 
+### Constants vs. Variables
 
 Constants are defined using the `val` keyword, and variables with the `var` keyword. Always use `val` instead of `var` if the value of the variable will not change.
 
-*Tip*: A good technique is to define everything using `val` and only change it to `var` if the compiler complains!
+_Tip_: A good technique is to define everything using `val` and only change it to `var` if the compiler complains!
 
 ### Nullable Types
 
@@ -422,24 +418,21 @@ When accessing a nullable value, use the safe call operator if the value is only
 editText?.setText("foo")
 ```
 
-
-
 ## XML Guidance
 
-Since Android uses XML extensively in addition to Kotlin and Java, we have some rules specific to XML. These can be found in our [Java code standards](https://github.com/kodecocodes/java-style-guide#xml-guidance)
-
+Since Android uses XML extensively in addition to Kotlin and Java, we have some rules specific to XML. These can be found in [Kodeco's Java code standards](https://github.com/kodecocodes/java-style-guide#xml-guidance)
 
 ## Language
 
 Use `en-US` English spelling. 🇺🇸
 
-__BAD:__
+**BAD:**
 
 ```kotlin
 val colourName = "red"
 ```
 
-__GOOD:__
+**GOOD:**
 
 ```kotlin
 val colorName = "red"
@@ -450,19 +443,19 @@ val colorName = "red"
 The following copyright statement should be included at the top of every source file:
 
 ```
-/* 
- * Copyright (c) 2023 Kodeco Inc.
- * 
+/*
+ * Copyright (c) 2023 Lune® Technologies Ltd.
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
- * 
+ *
  * Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
  * distribute, sublicense, create a derivative work, and/or sell copies of the
  * Software in any work that is designed, intended, or marketed for pedagogical or
@@ -470,11 +463,11 @@ The following copyright statement should be included at the top of every source 
  * or information technology.  Permission for such use, copying, modification,
  * merger, publication, distribution, sublicensing, creation of derivative works,
  * or sale is expressly withheld.
- * 
+ *
  * This project and source code may use libraries or frameworks that are
  * released under various Open-Source licenses. Use of those libraries and
  * frameworks are governed by their own individual licenses.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -483,11 +476,11 @@ The following copyright statement should be included at the top of every source 
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
- ```
- 
+```
+
 ## Smiley Face
 
-Smiley faces are a very prominent style feature of the kodeco.com site! It is very important to have the correct smile signifying the immense amount of happiness and excitement for the coding topic. The closing square bracket ] is used because it represents the largest smile able to be captured using ASCII art. A closing parenthesis ) creates a half-hearted smile, and thus is not preferred.
+As encouraged by [Kodeco](https://www.kodeco.com/), smiley faces are a very prominent style feature for [Lune](https://www.lunedata.io/)! It is very important to have the correct smile signifying the immense amount of happiness and excitement for the coding topic. The closing square bracket `]` is used because it represents the largest smile able to be captured using ASCII art. A closing parenthesis `)` creates a half-hearted smile, and thus is not preferred.
 
 Bad:
 
